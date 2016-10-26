@@ -26,16 +26,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface KYRequest : KYBaseRequest
 
-/**
- *  实时获取网络状态,通过Block回调实时获取
- */
-+ (void)networkStatusWithBlock:(KYHttpNetworkStatus )networkStatus;
-/**
- *  一次性获取当前网络状态,有网YES,无网:NO
- */
-+ (BOOL)currentNetworkStatus;
 
 @end
 

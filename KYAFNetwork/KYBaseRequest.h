@@ -23,9 +23,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <AFNetworking/AFNetworking.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+@class AFHTTPSessionManager;
+
 ///  HTTP Request method.
 typedef NS_ENUM(NSInteger, KYRequestMethod) {
     KYRequestMethodGET = 0,
@@ -56,14 +58,13 @@ typedef NS_ENUM(NSUInteger, KYNetworkStatus) {
     KYNetworkStatusReachableViaWiFi     //WIFI网络
 };
 
-typedef void(^KYHttpRequestSuccess)(id responseObject);     // 请求成功的Block
-typedef void(^KYHttpRequestFailed)(NSError *error);         // 请求失败的Block
 
 typedef void(^KYHttpNetworkStatus)(KYNetworkStatus status); //网络状态的Block
 
-typedef void(^KYHttpRequestCache)(id responseCache);         //缓存的Block
+@protocol AFMultipartFormData;
+typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData); // 用于 multipart 的数据block
+typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 
-typedef void (^KYHttpProgress)(NSProgress *progress);        //上传或者下载的进度
 
 
 @interface KYBaseRequest : NSObject
@@ -76,6 +77,16 @@ typedef void (^KYHttpProgress)(NSProgress *progress);        //上传或者下�
 
 ///  Response serializer type. See also `responseObject`.
 - (KYResponseSerializerType)responseSerializerType;
+
+
+/**
+ *  实时获取网络状态,通过Block回调实时获取
+ */
++ (void)networkStatusWithBlock:(KYHttpNetworkStatus )networkStatus;
+/**
+ *  一次性获取当前网络状态,有网YES,无网:NO
+ */
++ (BOOL)currentNetworkStatus;
 
 
 @end

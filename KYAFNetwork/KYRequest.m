@@ -23,52 +23,9 @@
 
 #import "KYRequest.h"
 
-static BOOL _isNetwork;
 static AFHTTPSessionManager *_manager;
 
 @implementation KYRequest
-
-
-#pragma mark - 开始监听网络
-+ (void)networkStatusWithBlock:(KYHttpNetworkStatus )networkStatus
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-
-        AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-        [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            switch (status)
-            {
-                case AFNetworkReachabilityStatusUnknown:
-                    networkStatus ? networkStatus(KYNetworkStatusUnknown) : nil;
-                    _isNetwork = NO;
-                    KYLog(@"未知网络");
-                    break;
-                case AFNetworkReachabilityStatusNotReachable:
-                    networkStatus ? networkStatus(KYNetworkStatusNotReachable) : nil;
-                    _isNetwork = NO;
-                    KYLog(@"无网络");
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWWAN:
-                    networkStatus ? networkStatus(KYNetworkStatusReachableViaWWAN) : nil;
-                    _isNetwork = YES;
-                    KYLog(@"2G,3G,4G 等其它网络");
-                    break;
-                case AFNetworkReachabilityStatusReachableViaWiFi:
-                    networkStatus ? networkStatus(KYNetworkStatusReachableViaWiFi) : nil;
-                    _isNetwork = YES;
-                    KYLog(@"WIFI");
-                    break;
-            }
-        }];
-
-        [manager startMonitoring];
-    });
-}
-
-+ (BOOL)currentNetworkStatus{
-     return _isNetwork;
-}
 
 
 @end
