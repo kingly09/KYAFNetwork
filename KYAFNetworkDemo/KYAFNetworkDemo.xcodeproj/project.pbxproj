@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		483A990B24329302C7216E6C /* libPods-KYAFNetworkDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69214D11EEB593BB66C672EA /* libPods-KYAFNetworkDemo.a */; };
+		BC15A1EE1DC08E1E00E4ABF8 /* KYRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC15A1ED1DC08E1E00E4ABF8 /* KYRequest.m */; };
 		BCDF401B1DBF50300096E91B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDF401A1DBF50300096E91B /* main.m */; };
 		BCDF401E1DBF50300096E91B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDF401D1DBF50300096E91B /* AppDelegate.m */; };
 		BCDF40211DBF50300096E91B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDF40201DBF50300096E91B /* ViewController.m */; };
@@ -21,6 +22,8 @@
 		09D1F2B6AAAC1E08142BAE54 /* Pods-KYAFNetworkDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYAFNetworkDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYAFNetworkDemo/Pods-KYAFNetworkDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		69214D11EEB593BB66C672EA /* libPods-KYAFNetworkDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KYAFNetworkDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC15A1EB1DC086CB00E4ABF8 /* KYAFNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYAFNetwork.h; sourceTree = "<group>"; };
+		BC15A1EC1DC08E1E00E4ABF8 /* KYRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYRequest.h; sourceTree = "<group>"; };
+		BC15A1ED1DC08E1E00E4ABF8 /* KYRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYRequest.m; sourceTree = "<group>"; };
 		BCDF40161DBF50300096E91B /* KYAFNetworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYAFNetworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDF401A1DBF50300096E91B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCDF401C1DBF50300096E91B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,9 +114,11 @@
 		BCDF40301DBF50540096E91B /* KYAFNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				BC15A1EB1DC086CB00E4ABF8 /* KYAFNetwork.h */,
 				BCDF40331DBF56150096E91B /* KYBaseRequest.h */,
 				BCDF40341DBF56150096E91B /* KYBaseRequest.m */,
-				BC15A1EB1DC086CB00E4ABF8 /* KYAFNetwork.h */,
+				BC15A1EC1DC08E1E00E4ABF8 /* KYRequest.h */,
+				BC15A1ED1DC08E1E00E4ABF8 /* KYRequest.m */,
 			);
 			name = KYAFNetwork;
 			path = ../../KYAFNetwork;
@@ -243,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC15A1EE1DC08E1E00E4ABF8 /* KYRequest.m in Sources */,
 				BCDF40211DBF50300096E91B /* ViewController.m in Sources */,
 				BCDF401E1DBF50300096E91B /* AppDelegate.m in Sources */,
 				BCDF40351DBF56150096E91B /* KYBaseRequest.m in Sources */,

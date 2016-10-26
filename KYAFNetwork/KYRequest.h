@@ -1,5 +1,5 @@
 //
-//  KYAFNetwork.h
+//  KYRequest.h
 //
 // Copyright (c) 2016 KYAFNetwork  Software (https://github.com/kingly09/KYAFNetwork) by kingly inc.
 //
@@ -21,17 +21,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Foundation/Foundation.h>
+#import "KYAFNetwork.h"
 
-#ifndef KYAFNetwork_h
-#define KYAFNetwork_h
+NS_ASSUME_NONNULL_BEGIN
 
-#import "KYBaseRequest.h"
+@interface KYRequest : KYBaseRequest
 
+/**
+ *  实时获取网络状态,通过Block回调实时获取
+ */
++ (void)networkStatusWithBlock:(KYHttpNetworkStatus )networkStatus;
+/**
+ *  一次性获取当前网络状态,有网YES,无网:NO
+ */
++ (BOOL)currentNetworkStatus;
 
-#ifdef DEBUG
-#define KYLog(...) printf("[KYAFNetwork] [%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
-#else
-#define KYLog(...)
-#endif
+@end
 
-#endif /* KYAFNetwork_h */
+NS_ASSUME_NONNULL_END

@@ -48,8 +48,22 @@ typedef NS_ENUM(NSUInteger, KYResponseSerializerType) {
     KYResponseSerializerTypeJSON,   //设置响应数据为JSON格式
 };
 
-typedef void(^KYHttpRequestSuccess)(id responseObject);  // 请求成功的Block
-typedef void(^HttpRequestFailed)(NSError *error);        // 请求失败的Block
+
+typedef NS_ENUM(NSUInteger, KYNetworkStatus) {
+    KYNetworkStatusUnknown,             //未知网络
+    KYNetworkStatusNotReachable,        //无网络
+    KYNetworkStatusReachableViaWWAN,    //手机网络
+    KYNetworkStatusReachableViaWiFi     //WIFI网络
+};
+
+typedef void(^KYHttpRequestSuccess)(id responseObject);     // 请求成功的Block
+typedef void(^KYHttpRequestFailed)(NSError *error);         // 请求失败的Block
+
+typedef void(^KYHttpNetworkStatus)(KYNetworkStatus status); //网络状态的Block
+
+typedef void(^KYHttpRequestCache)(id responseCache);         //缓存的Block
+
+typedef void (^KYHttpProgress)(NSProgress *progress);        //上传或者下载的进度
 
 
 @interface KYBaseRequest : NSObject
