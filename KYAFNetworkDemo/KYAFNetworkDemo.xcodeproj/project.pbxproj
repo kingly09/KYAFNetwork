@@ -16,6 +16,7 @@
 		BCDF40261DBF50300096E91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDF40251DBF50300096E91B /* Assets.xcassets */; };
 		BCDF40291DBF50300096E91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCDF40271DBF50300096E91B /* LaunchScreen.storyboard */; };
 		BCDF40351DBF56150096E91B /* KYBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDF40341DBF56150096E91B /* KYBaseRequest.m */; };
+		BCE47E971DC3500400E89FC4 /* KYRequestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE47E961DC3500400E89FC4 /* KYRequestConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		BCDF402A1DBF50300096E91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCDF40331DBF56150096E91B /* KYBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYBaseRequest.h; sourceTree = "<group>"; };
 		BCDF40341DBF56150096E91B /* KYBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYBaseRequest.m; sourceTree = "<group>"; };
+		BCE47E951DC3500400E89FC4 /* KYRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYRequestConfig.h; sourceTree = "<group>"; };
+		BCE47E961DC3500400E89FC4 /* KYRequestConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYRequestConfig.m; sourceTree = "<group>"; };
 		F8FCD9B6DB882AE4E1735C80 /* Pods-KYAFNetworkDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYAFNetworkDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYAFNetworkDemo/Pods-KYAFNetworkDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +122,8 @@
 				BCDF40341DBF56150096E91B /* KYBaseRequest.m */,
 				BC15A1EC1DC08E1E00E4ABF8 /* KYRequest.h */,
 				BC15A1ED1DC08E1E00E4ABF8 /* KYRequest.m */,
+				BCE47E951DC3500400E89FC4 /* KYRequestConfig.h */,
+				BCE47E961DC3500400E89FC4 /* KYRequestConfig.m */,
 			);
 			name = KYAFNetwork;
 			path = ../../KYAFNetwork;
@@ -249,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC15A1EE1DC08E1E00E4ABF8 /* KYRequest.m in Sources */,
+				BCE47E971DC3500400E89FC4 /* KYRequestConfig.m in Sources */,
 				BCDF40211DBF50300096E91B /* ViewController.m in Sources */,
 				BCDF401E1DBF50300096E91B /* AppDelegate.m in Sources */,
 				BCDF40351DBF56150096E91B /* KYBaseRequest.m in Sources */,

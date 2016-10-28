@@ -29,9 +29,40 @@
 #import "YYCache.h"
 #endif
 
-static AFHTTPSessionManager *_manager;
+@interface KYRequest ()
+@property (readwrite, nonatomic, strong) NSString *baseURL;
+@property (readonly, nonatomic, strong)  KYRequestConfig *requestConfig;
+@end
+
 
 @implementation KYRequest
+
++ (instancetype) manager{
+      return [[[self class] alloc] initWithBaseURL:nil];
+}
+- (instancetype)init {
+    return [self initWithBaseURL:nil];
+}
+
+- (instancetype)initWithBaseURL:(nullable NSString *)url{
+    return [self initWithBaseURL:url requestConfig:nil];
+}
+
+- (instancetype)initWithBaseURL:(NSString *)url
+           requestConfig:(KYRequestConfig *)configuration
+{
+
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+
+    self.baseURL = url;
+
+    _requestConfig = configuration;
+
+    return self;
+}
 
 
 @end
@@ -120,7 +151,6 @@ static YYCache *_dataCache;
     //异步缓存,不会阻塞主线程
     [_dataCache setObject:responseData forKey:cacheKey withBlock:nil];
 }
-
 
 + (NSString *)cacheKeyWithURL:(NSString *)URL parameters:(NSDictionary *)parameters
 {

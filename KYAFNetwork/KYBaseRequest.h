@@ -65,7 +65,8 @@ typedef void(^KYHttpNetworkStatus)(KYNetworkStatus status); //网络状态的Blo
 typedef void (^AFConstructingBlock)(id<AFMultipartFormData> formData); // 用于 multipart 的数据block
 typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
 
-
+typedef void(^KYHttpRequestSuccess)(id responseObject);  //请求成功的Block
+typedef void(^KYHttpRequestFailed)(NSError *error);      //请求失败的Block
 
 @interface KYBaseRequest : NSObject
 
@@ -87,6 +88,7 @@ typedef void (^AFURLSessionTaskProgressBlock)(NSProgress *);
  *  一次性获取当前网络状态,有网YES,无网:NO
  */
 + (BOOL)currentNetworkStatus;
+
 
 
 @end

@@ -1,5 +1,5 @@
 //
-//  KYRequest.h
+//  KYRequestConfig.m
 //
 // Copyright (c) 2016 KYAFNetwork  Software (https://github.com/kingly09/KYAFNetwork) by kingly inc.
 //
@@ -21,42 +21,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "KYAFNetwork.h"
+#import "KYRequestConfig.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation KYRequestConfig
 
-
-@interface KYRequest : KYBaseRequest
-
-@property (readonly, nonatomic, strong, nullable) NSString *baseURL;
-/**
- * @breif  Creates and returns an `KYRequest` object.
- */
-+ (instancetype) manager;
-
-/**
- Initializes an `KYRequest` object with the specified base URL.
-
- @param url  url The base URL for the HTTP client.
-
- @return The newly-initialized HTTP client
- */
-- (instancetype)initWithBaseURL:(nullable NSString *)url;
-
-/**
- Initializes an `KYRequestConfig` object with the specified base URL.
-
- This is the designated initializer.
-
- @param url The base URL for the HTTP client.
- @param configuration The configuration used to create the managed session.
-
- @return The newly-initialized HTTP client
- */
-- (instancetype)initWithBaseURL:(nullable NSString *)url
-           requestConfig:(nullable KYRequestConfig *)configuration NS_DESIGNATED_INITIALIZER;
++ (KYRequestConfig *)sharedInstance {
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
 
 @end
-
-NS_ASSUME_NONNULL_END

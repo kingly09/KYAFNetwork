@@ -26,6 +26,7 @@
 #define KYAFNetwork_h
 
 #import "KYBaseRequest.h"
+#import "KYRequestConfig.h"
 
 
 #ifdef DEBUG
